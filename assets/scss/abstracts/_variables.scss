@@ -1,0 +1,12 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+// // Variables
+h1 {
+  font-size: f.rem(32);
+  @include m.breakpoint("medium") {
+    font-size: f.rem(48);
+    color: red;
+  }
+}
+ 
