@@ -43,7 +43,7 @@
 h1 {
   font-size: 2rem;
 }
-@media (width >= 43.75em) {
+@media (width >= 47.9375em) {
   h1 {
     font-size: 3rem;
     color: red;

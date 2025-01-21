@@ -1,10 +1,11 @@
-@use '../abstracts/functions' as f;
-@use 'sass:math';
-@use 'sass:map';
+@use "../abstracts/functions" as f;
+@use "sass:math";
+@use "sass:map";
 
 $breakpoints: (
-  'medium': f.em(700),
-  'large': f.em(1200),
+  "medium": f.em(767),
+  "large": f.em(1024),
+  "xlarge": f.em(1440),
 );
 
 // min-width
