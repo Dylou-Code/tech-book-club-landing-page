@@ -1,0 +1,295 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/inter/static/Inter_18pt-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/inter/static/Inter_18pt-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Martian mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/martian-mono/static/MartianMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Martian mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/martian-mono/static/MartianMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Martian mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/martian-mono/static/MartianMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Martian mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/martian-mono/static/MartianMono-SemiBold.ttf") format("truetype");
+}
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Martian mono", "Inter", sans-serif;
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  color: var(--colors-neutral-900);
+}
+
+:root {
+  --colors-neutral-0: rgba(255, 255, 255, 1);
+  --colors-neutral-50: rgba(250, 245, 243, 1);
+  --colors-neutral-200: rgba(230, 225, 223, 1);
+  --colors-neutral-700: rgba(56, 81, 89, 1);
+  --colors-neutral-900: rgba(6, 38, 48, 1);
+  --colors-light-salmon-50: rgba(255, 245, 239, 1);
+  --colors-light-salmon-100: rgba(255, 226, 209, 1);
+  --colors-light-salmon-500: rgba(254, 163, 111, 1);
+}
+
+html .text-preset-1 {
+  font-family: "Martian mono", sans-serif;
+  font-size: 2.375rem;
+  line-height: 120%;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+html .text-preset-2 {
+  font-family: "Martian mono", sans-serif;
+  font-size: 2.125rem;
+  line-height: 130%;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+html .text-preset-3 {
+  font-size: 1.5rem;
+  line-height: 120%;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+html .text-preset-4 {
+  font-family: "Martian mono", sans-serif;
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+html .text-preset-4-semibold {
+  font-family: "Martian mono", sans-serif;
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+html .text-preset-5 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 140%;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+html .text-preset-5-semibold {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 140%;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+html .text-preset-6 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 140%;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+@media (width >= 47.9375em) {
+  html .text-preset-1 {
+    font-size: 4rem;
+    line-height: 120%;
+    font-weight: 400;
+    letter-spacing: -2px;
+  }
+  html .text-preset-2 {
+    font-size: 2.375rem;
+    line-height: 120%;
+    font-weight: 400;
+    letter-spacing: -2px;
+  }
+  html .text-preset-3 {
+    font-size: 2.125rem;
+    line-height: 120%;
+    font-weight: 600;
+    letter-spacing: -2px;
+  }
+  html .text-preset-6 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.125rem;
+    line-height: 140%;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  html .text-preset-7 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    line-height: 120%;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+}
+
+:root {
+  --spacing-0: 0px;
+  --spacing-025: 2px;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+}
+
+:root {
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-200);
+  padding: var(--spacing-250) var(--spacing-300);
+  background-color: var(--colors-light-salmon-50);
+  border: 2px solid var(--colors-neutral-900);
+  border-radius: var(--radius-8);
+  cursor: pointer;
+}
+.primary-button:hover {
+  background: linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%);
+}
+.primary-button:focus-visible {
+  outline: none; /* Supprimer les bordures par défaut */
+  /* Première ombre blanche */
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px var(--colors-neutral-700); /* Deuxième ombre sombre */
+}
+
+.alternate-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-200);
+  padding: var(--spacing-250) var(--spacing-300);
+  background: none;
+  color: var(--colors-neutral-0);
+  border: 2px solid var(--colors-neutral-0);
+  border-radius: var(--radius-8);
+  cursor: pointer;
+}
+.alternate-button:hover {
+  background: linear-gradient(90deg, var(--colors-neutral-700) 0%, var(--colors-neutral-900) 100%);
+}
+.alternate-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--colors-neutral-900), 0 0 0 5px var(--colors-neutral-200);
+}
+
+.buttons {
+  display: flex;
+  gap: var(--spacing-200);
+  background-color: var(--colors-neutral-900);
+  padding: var(--spacing-300);
+}
+
+/*# sourceMappingURL=main.css.map */

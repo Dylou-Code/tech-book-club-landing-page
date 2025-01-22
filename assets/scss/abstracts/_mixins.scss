@@ -1,0 +1,23 @@
+@use "../abstracts/functions" as f;
+@use "sass:math";
+@use "sass:map";
+
+$breakpoints: (
+  "medium": f.em(767),
+  "large": f.em(1024),
+  "xlarge": f.em(1440),
+);
+
+// min-width
+@mixin breakpoint($size) {
+  @media (width >= map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// max-width
+@mixin breakpoint-down($size) {
+  @media (width < map.get($breakpoints, $size)) {
+    @content;
+  }
+}

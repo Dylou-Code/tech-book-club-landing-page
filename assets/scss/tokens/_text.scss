@@ -1,0 +1,106 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+html {
+  .text-preset-1 {
+    font-family: "Martian mono", sans-serif;
+    font-size: f.rem(38);
+    line-height: 120%;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+
+  .text-preset-2 {
+    font-family: "Martian mono", sans-serif;
+    font-size: f.rem(34);
+    line-height: 130%;
+    font-weight: 600;
+    letter-spacing: -2px;
+  }
+
+  .text-preset-3 {
+    font-size: f.rem(24);
+    line-height: 120%;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  .text-preset-4 {
+    font-family: "Martian mono", sans-serif;
+    font-size: f.rem(24);
+    line-height: 110%;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  .text-preset-4-semibold {
+    font-family: "Martian mono", sans-serif;
+    font-size: f.rem(24);
+    line-height: 110%;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  .text-preset-5 {
+    font-family: "Inter", sans-serif;
+    font-size: f.rem(24);
+    line-height: 140%;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+
+  .text-preset-5-semibold {
+    font-family: "Inter", sans-serif;
+    font-size: f.rem(24);
+    line-height: 140%;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  .text-preset-6 {
+    font-family: "Inter", sans-serif;
+    font-size: f.rem(16);
+    line-height: 140%;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  @include m.breakpoint("medium") {
+    .text-preset-1 {
+      font-size: f.rem(64);
+      line-height: 120%;
+      font-weight: 400;
+      letter-spacing: -2px;
+    }
+
+    .text-preset-2 {
+      font-size: f.rem(38);
+      line-height: 120%;
+      font-weight: 400;
+      letter-spacing: -2px;
+    }
+
+    .text-preset-3 {
+      font-size: f.rem(34);
+      line-height: 120%;
+      font-weight: 600;
+      letter-spacing: -2px;
+    }
+
+    .text-preset-6 {
+      font-family: "Inter", sans-serif;
+      font-size: f.rem(18);
+      line-height: 140%;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .text-preset-7 {
+      font-family: "Inter", sans-serif;
+      font-size: f.rem(14);
+      line-height: 120%;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+  }
+}
