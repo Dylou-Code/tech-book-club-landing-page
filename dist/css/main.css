@@ -292,4 +292,52 @@ html .text-preset-6 {
   padding: var(--spacing-300);
 }
 
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, contenu, footer */
+  min-height: 100vh; /* La hauteur occupe tout l'écran */
+}
+
+.layout__header,
+.layout__footer {
+  background-color: var(--colors-neutral-900); /* Couleur de fond */
+  color: var(--colors-neutral-100); /* Texte */
+  padding: var(--spacing-300); /* Espacement interne */
+  text-align: center;
+}
+
+.layout__main {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1170px) 1fr; /* Colonnes avec contenu centré */
+  gap: var(--spacing-400); /* Espacement entre les sections */
+  padding: 0 var(--spacing-300); /* Marges latérales */
+}
+
+.layout__main > section {
+  grid-column: 2; /* Le contenu principal est centré */
+  padding: var(--spacing-300); /* Espacement interne */
+  background-color: var(--colors-light-salmon-50);
+  border-radius: var(--radius-8); /* Coins arrondis */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre discrète */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .layout__main {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    padding: 0 16px; /* Marges fixes pour mobile */
+  }
+  .layout__main > section {
+    grid-column: 1; /* Occupe toute la largeur */
+  }
+}
+.layout__main > .full-width {
+  grid-column: 1/-1; /* La section occupe toutes les colonnes */
+  margin-left: calc(-1 * var(--spacing-300)); /* Supprime la marge gauche */
+  margin-right: calc(-1 * var(--spacing-300)); /* Supprime la marge droite */
+  background-color: var(--colors-neutral-700); /* Couleur différente pour se démarquer */
+  color: var(--colors-neutral-100); /* Texte lisible */
+  padding: var(--spacing-400); /* Espacement interne */
+}
+
 /*# sourceMappingURL=main.css.map */
