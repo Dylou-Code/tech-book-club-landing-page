@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr; /* Une seule colonne en mobile */
+  gap: var(--spacing-400); /* Espacement entre les éléments */
+  padding: 0 16px; /* Marges latérales pour mobile */
+}
+
+.container > * {
+  grid-column: 1; /* Contenu centré sur une seule colonne */
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr minmax(0, 1170px) 1fr; /* Colonnes pour marges et contenu centré */
+    padding: 0 var(--spacing-300); /* Ajuste les marges latérales */
+  }
+
+  .container > * {
+    grid-column: 2; /* Place le contenu dans la colonne centrale */
+  }
+}

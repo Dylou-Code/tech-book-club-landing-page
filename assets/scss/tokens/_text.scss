@@ -68,9 +68,6 @@ html {
   @include m.breakpoint("medium") {
     .text-preset-1 {
       font-size: f.rem(64);
-      line-height: 120%;
-      font-weight: 400;
-      letter-spacing: -2px;
     }
 
     .text-preset-2 {
