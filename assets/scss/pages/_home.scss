@@ -13,19 +13,6 @@
 
   padding-top: var(--spacing-300);
 
-  &::after {
-    content: "";
-    background-image: url(/assets/images/pattern-glow.svg);
-    pointer-events: none; // éviter les interactions avec le pseudo-element
-    position: absolute;
-    bottom: -300px;
-    right: -300px;
-    width: 684px; /* Ajuste la largeur */
-    height: 684px; /* Ajuste la hauteur */
-    background-size: cover; /* Assure le bon ratio */
-    background-position: center;
-    z-index: 1; /* Passe derrière le contenu */
-  }
 
   &__content {
     display: grid;
@@ -69,21 +56,35 @@
   @include m.breakpoint("medium") {
     gap: var(--spacing-800);
 
-    &__content {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--spacing-800);
+    &::after {
+      content: "";
+      background-image: url('/assets/images/pattern-glow.svg');
+      border: 1px solid red;
+      pointer-events: none; // éviter les interactions avec le pseudo-element
+      position: absolute;
+      bottom: -300px;
+      right: -420px;
+      width: 684px; /* Ajuste la largeur */
+      height: 684px; /* Ajuste la hauteur */
+      background-size: cover; /* Assure le bon ratio */
+      background-position: center;
+      z-index: 1; /* Passe derrière le contenu */
     }
 
     &__image {
       img {
         max-width: 540%;
-        border-radius: var(--radius-4);
       }
     }
   }
 
   @include m.breakpoint("large") {
     gap: var(--spacing-1000);
+
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-800);
+    }
   }
 }
 
