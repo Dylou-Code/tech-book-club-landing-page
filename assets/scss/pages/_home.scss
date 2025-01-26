@@ -1,18 +1,18 @@
 @use "../abstracts/mixins" as m;
 .hero {
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-600);
+  padding-top: var(--spacing-300);
+  padding-bottom: 80px;
+
   &__section {
     position: relative;
     background-image: url("/assets/images/pattern-light-bg.svg");
     background-color: #faf5f3;
     overflow: hidden; /* Cache le contenu qui dépasse */
   }
-  
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-600);
-
-  padding-top: var(--spacing-300);
-
 
   &__content {
     display: grid;
@@ -21,7 +21,17 @@
     gap: var(--spacing-400);
   }
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+  }
+
   &__text {
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
     &-title {
       background: linear-gradient(
         102deg,
@@ -48,18 +58,46 @@
   }
 
   &__cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-250);
+
     &-button {
+      width: fit-content;
       text-transform: uppercase;
     }
+
+    &-testimonial {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-150);
+
+      img {
+        height: 40px;
+      }
+  
+      &-rating {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-050);
+  
+        &-stars {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
   }
+
+ 
 
   @include m.breakpoint("medium") {
     gap: var(--spacing-800);
 
     &::after {
       content: "";
-      background-image: url('/assets/images/pattern-glow.svg');
-      border: 1px solid red;
+      background-image: url("/assets/images/pattern-glow.svg");
       pointer-events: none; // éviter les interactions avec le pseudo-element
       position: absolute;
       bottom: -300px;
