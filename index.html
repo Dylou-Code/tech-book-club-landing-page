@@ -16,39 +16,60 @@
   </head>
   <body>
     <main>
-      <section class="hero container" id="hero">
-        <a href="#hero" class="nav__logo">
-          <img
-            src="./assets/images/logo.svg"
-            alt="Tech Book Club"
-            loading="lazy"
-          />
-        </a>
-        <div class="hero__content grid">
-          <div class="hero__text">
-            <h1 class="text-preset-1">Join the ultimate tech book club</h1>
-            <p class="text-preset-5">
-              Turn your reading time into learning time with fellow tech
-              enthusiasts. Get curated recommendations, join vibrant
-              discussions, and level up your skills one chapter at a time
-            </p>
-          </div>
-          <div class="hero__cta">
-            <button class="primary-button text-preset-6">
-              Review membership options
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="25"
-                fill="none"
-                viewBox="0 0 24 25"
-              >
-                <path
-                  fill="#062630"
-                  d="m3.96 14.956.72-3.12c1.224.12 2.328.504 3.264 1.2.936.696 1.584 1.512 1.896 2.496V3.676h2.76v11.856c.672-1.944 2.688-3.48 5.16-3.696l.72 3.12c-3.384.12-5.52 2.112-5.88 5.544H9.84c-.36-3.456-2.496-5.424-5.88-5.544Z"
+      <section class="hero__section container" id="hero">
+        <div class="hero">
+          <a href="#hero" class="hero__logo">
+            <img
+              src="./assets/images/logo.svg"
+              alt="Tech Book Club"
+              loading="lazy"
+            />
+          </a>
+          <div class="hero__content">
+            <div class="hero__text">
+              <h1 class="hero__text-title text-preset-1">
+                Join the ultimate tech book club
+              </h1>
+              <p class="hero__text-description text-preset-5">
+                Turn your reading time into learning time with fellow tech
+                enthusiasts. Get curated recommendations, join vibrant
+                discussions, and level up your skills one chapter at a time
+              </p>
+              <div class="hero__cta">
+                <button class="hero__cta-button primary-button text-preset-6">
+                  Review membership options
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="25"
+                    fill="none"
+                    viewBox="0 0 24 25"
+                  >
+                    <path
+                      fill="#062630"
+                      d="m3.96 14.956.72-3.12c1.224.12 2.328.504 3.264 1.2.936.696 1.584 1.512 1.896 2.496V3.676h2.76v11.856c.672-1.944 2.688-3.48 5.16-3.696l.72 3.12c-3.384.12-5.52 2.112-5.88 5.544H9.84c-.36-3.456-2.496-5.424-5.88-5.544Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="hero__image">
+              <picture>
+                <source
+                  srcset="./assets/images/image-hero-desktop.webp"
+                  media="(min-width: 1024px)"
                 />
-              </svg>
-            </button>
+                <source
+                  srcset="./assets/images/image-hero-tablet.webp"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  src="./assets/images/image-hero-mobile.webp"
+                  alt="Tech Book Club"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
           </div>
         </div>
       </section>

@@ -1,8 +1,8 @@
+@use "../abstracts/mixins" as m;
 .container {
   display: grid;
-  grid-template-columns: 1fr; /* Une seule colonne en mobile */
-  gap: var(--spacing-400); /* Espacement entre les éléments */
-  padding: 0 16px; /* Marges latérales pour mobile */
+  grid-template-columns: 1fr; 
+  padding-inline: var(--spacing-200);
 }
 
 .container > * {
@@ -10,13 +10,17 @@
 }
 
 /* Desktop */
-@media (min-width: 768px) {
+@include m.breakpoint("medium") {
   .container {
     grid-template-columns: 1fr minmax(0, 1170px) 1fr; /* Colonnes pour marges et contenu centré */
-    padding: 0 var(--spacing-300); /* Ajuste les marges latérales */
+    padding-inline: var(--spacing-400); /* Ajuste les marges latérales */
   }
 
   .container > * {
     grid-column: 2; /* Place le contenu dans la colonne centrale */
   }
 }
+
+// @include m.breakpoint("large") { 
+  
+// }

@@ -246,9 +246,8 @@ html .text-preset-6 {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr; /* Une seule colonne en mobile */
-  gap: var(--spacing-400); /* Espacement entre les éléments */
-  padding: 0 16px; /* Marges latérales pour mobile */
+  grid-template-columns: 1fr;
+  padding-inline: var(--spacing-200);
 }
 
 .container > * {
@@ -256,10 +255,10 @@ html .text-preset-6 {
 }
 
 /* Desktop */
-@media (min-width: 768px) {
+@media (width >= 47.9375em) {
   .container {
     grid-template-columns: 1fr minmax(0, 1170px) 1fr; /* Colonnes pour marges et contenu centré */
-    padding: 0 var(--spacing-300); /* Ajuste les marges latérales */
+    padding-inline: var(--spacing-400); /* Ajuste les marges latérales */
   }
   .container > * {
     grid-column: 2; /* Place le contenu dans la colonne centrale */
@@ -274,6 +273,16 @@ html .text-preset-6 {
   border: 2px solid var(--colors-neutral-900);
   border-radius: var(--radius-8);
   cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 130%;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+@media (width >= 47.9375em) {
+  .primary-button {
+    font-size: 1.125rem;
+  }
 }
 .primary-button:hover {
   background: linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%);
@@ -311,8 +320,70 @@ html .text-preset-6 {
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-600);
+  padding-top: var(--spacing-300);
+}
+.hero__section {
+  position: relative;
   background-image: url("/assets/images/pattern-light-bg.svg");
-  margin-top: var(--spacing-300);
+  background-color: #faf5f3;
+  overflow: hidden; /* Cache le contenu qui dépasse */
+}
+.hero::after {
+  content: "";
+  background-image: url(/assets/images/pattern-glow.svg);
+  pointer-events: none;
+  position: absolute;
+  bottom: -300px;
+  right: -300px;
+  width: 684px; /* Ajuste la largeur */
+  height: 684px; /* Ajuste la hauteur */
+  background-size: cover; /* Assure le bon ratio */
+  background-position: center;
+  z-index: 1; /* Passe derrière le contenu */
+}
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--spacing-400);
+}
+.hero__text-title {
+  background: linear-gradient(102deg, var(--colors-light-salmon-500) -15%, var(--colors-neutral-900) 48%);
+  /* Affiche le gradient comme couleur de texte */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Rend le texte transparent pour révéler le gradient */
+  background-clip: text; /* Standard */
+}
+.hero__text-description {
+  color: var(--colors-neutral-700);
+}
+.hero__image img {
+  width: 100%;
+  border-radius: var(--radius-4);
+}
+.hero__cta-button {
+  text-transform: uppercase;
+}
+@media (width >= 47.9375em) {
+  .hero {
+    gap: var(--spacing-800);
+  }
+  .hero__content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-800);
+  }
+  .hero__image img {
+    max-width: 540%;
+    border-radius: var(--radius-4);
+  }
+}
+@media (width >= 64em) {
+  .hero {
+    gap: var(--spacing-1000);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

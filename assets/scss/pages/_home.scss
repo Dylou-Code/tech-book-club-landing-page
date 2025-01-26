@@ -1,16 +1,98 @@
+@use "../abstracts/mixins" as m;
 .hero {
-    background-image: url('/assets/images/pattern-light-bg.svg');
-    margin-top: var(--spacing-300);
+  &__section {
+    position: relative;
+    background-image: url("/assets/images/pattern-light-bg.svg");
+    background-color: #faf5f3;
+    overflow: hidden; /* Cache le contenu qui dépasse */
+  }
+  
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-600);
+
+  padding-top: var(--spacing-300);
+
+  &::after {
+    content: "";
+    background-image: url(/assets/images/pattern-glow.svg);
+    pointer-events: none; // éviter les interactions avec le pseudo-element
+    position: absolute;
+    bottom: -300px;
+    right: -300px;
+    width: 684px; /* Ajuste la largeur */
+    height: 684px; /* Ajuste la hauteur */
+    background-size: cover; /* Assure le bon ratio */
+    background-position: center;
+    z-index: 1; /* Passe derrière le contenu */
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--spacing-400);
+  }
+
+  &__text {
+    &-title {
+      background: linear-gradient(
+        102deg,
+        var(--colors-light-salmon-500) -15%,
+        var(--colors-neutral-900) 48%
+      );
+
+      /* Affiche le gradient comme couleur de texte */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; /* Rend le texte transparent pour révéler le gradient */
+      background-clip: text; /* Standard */
+    }
+
+    &-description {
+      color: var(--colors-neutral-700);
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      border-radius: var(--radius-4);
+    }
+  }
+
+  &__cta {
+    &-button {
+      text-transform: uppercase;
+    }
+  }
+
+  @include m.breakpoint("medium") {
+    gap: var(--spacing-800);
+
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-800);
+    }
+
+    &__image {
+      img {
+        max-width: 540%;
+        border-radius: var(--radius-4);
+      }
+    }
+  }
+
+  @include m.breakpoint("large") {
+    gap: var(--spacing-1000);
+  }
 }
-
-
 
 // .layout {
 //     display: grid;
 //     grid-template-rows: auto 1fr auto; /* Header, contenu, footer */
 //     min-height: 100vh; /* La hauteur occupe tout l'écran */
 //   }
-  
+
 //   .layout__header,
 //   .layout__footer {
 //     background-color: var(--colors-neutral-900); /* Couleur de fond */
@@ -18,14 +100,14 @@
 //     padding: var(--spacing-300); /* Espacement interne */
 //     text-align: center;
 //   }
-  
+
 //   .layout__main {
 //     display: grid;
 //     grid-template-columns: 1fr minmax(0, 1170px) 1fr; /* Colonnes avec contenu centré */
 //     gap: var(--spacing-400); /* Espacement entre les sections */
 //     padding: 0 var(--spacing-300); /* Marges latérales */
 //   }
-  
+
 //   .layout__main > section {
 //     grid-column: 2; /* Le contenu principal est centré */
 //     padding: var(--spacing-300); /* Espacement interne */
@@ -33,14 +115,14 @@
 //     border-radius: var(--radius-8); /* Coins arrondis */
 //     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre discrète */
 //   }
-  
+
 //   /* Responsive design */
 //   @media (max-width: 768px) {
 //     .layout__main {
 //       grid-template-columns: 1fr; /* Une seule colonne */
 //       padding: 0 16px; /* Marges fixes pour mobile */
 //     }
-  
+
 //     .layout__main > section {
 //       grid-column: 1; /* Occupe toute la largeur */
 //     }
@@ -54,5 +136,3 @@
 //     color: var(--colors-neutral-100); /* Texte lisible */
 //     padding: var(--spacing-400); /* Espacement interne */
 //   }
-  
-  
