@@ -1,12 +1,23 @@
 @use "../abstracts/mixins" as m;
 .container {
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   padding-inline: var(--spacing-200);
 }
 
 .container > * {
   grid-column: 1; /* Contenu centré sur une seule colonne */
+}
+
+section:not(:first-child) {
+  margin-top: var(--spacing-800);
+}
+
+.grids {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--spacing-400);
 }
 
 /* Desktop */
@@ -19,8 +30,19 @@
   .container > * {
     grid-column: 2; /* Place le contenu dans la colonne centrale */
   }
+
+  section:not(:first-child) {
+    margin-top: var(--spacing-1000);
+  }
 }
 
-// @include m.breakpoint("large") { 
-  
-// }
+@include m.breakpoint("large") {
+  .grids {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-1000);
+  }
+
+  section:not(:first-child) {
+    margin-top: 120px;
+  }
+}

@@ -1,6 +1,5 @@
 @use "../abstracts/mixins" as m;
 .hero {
-
   display: flex;
   flex-direction: column;
   gap: var(--spacing-600);
@@ -75,12 +74,12 @@
       img {
         height: 40px;
       }
-  
+
       &-rating {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-050);
-  
+
         &-stars {
           display: flex;
           flex-direction: row;
@@ -120,5 +119,20 @@
       grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-800);
     }
+  }
+}
+
+.feature {
+  &__image {
+    img {
+      width: 100%;
+      border-radius: var(--radius-20);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
   }
 }
