@@ -172,6 +172,16 @@
     gap: 34px;
   }
 
+  &__title {
+    position: relative;
+    &-image {
+      position: absolute;
+      bottom: 8px;
+      left: 75px;
+      max-width: 80px;
+    }
+  }
+
   &__description {
     color: var(--colors-neutral-700);
   }
