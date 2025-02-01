@@ -124,6 +124,7 @@
 
 .feature {
   &__image {
+    order: 2;
     img {
       width: 100%;
       border-radius: var(--radius-20);
@@ -131,8 +132,64 @@
   }
 
   &__content {
+    order: 1;
     display: flex;
     flex-direction: column;
     gap: 34px;
+  }
+
+  @include m.breakpoint("large") {
+    &__image {
+      order: 1;
+      img {
+        width: 100%;
+        border-radius: var(--radius-20);
+      }
+    }
+
+    &__content {
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+  }
+}
+
+.community {
+  &__image {
+    order: 2;
+    img {
+      width: 100%;
+      border-radius: var(--radius-20);
+    }
+  }
+
+  &__content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  &__description {
+    color: var(--colors-neutral-700);
+  }
+
+  @include m.breakpoint("large") {
+    &__image {
+      order: 2;
+      img {
+        width: 100%;
+        border-radius: var(--radius-20);
+      }
+    }
+
+    &__content {
+      order: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
   }
 }

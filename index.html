@@ -288,7 +288,37 @@
         </div>
       </section>
       <section class="community container">
-
+        <div class="grids">
+          <div class="community__image col1">
+            <picture>
+              <source
+                srcset="./assets/images/image-not-average-desktop.webp"
+                media="(min-width: 1024px)"
+              />
+              <source
+                srcset="./assets/images/image-not-average-tablet.webp"
+                media="(min-width: 768px)"
+              />
+              <img
+                src="./assets/images/image-not-average-mobile.webp"
+                alt="feature image"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+          <div class="community__content col2">
+            <h2 class="community__title text-preset-2">
+              Not your average book club
+            </h2>
+            <p class="community__description text-preset-5">
+              Connect with a community that speaks your language - from
+              <span class="text-preset-5-semibold">Python</span> to
+              <span class="text-preset-5-semibold">TypeScript</span> and
+              everything in between. Our discussions blend technical depth with
+              practical applications.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
