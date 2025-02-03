@@ -85,6 +85,10 @@
           flex-direction: row;
         }
       }
+
+      &-text {
+        color: var(--colors-neutral-700);
+      }
     }
   }
 
@@ -157,6 +161,7 @@
 }
 
 .community {
+  position: relative;
   &__image {
     order: 2;
     img {
@@ -175,6 +180,7 @@
   &__title {
     position: relative;
     &-image {
+      // transformer cette element en afeter et utiliser transform()
       position: absolute;
       bottom: 0px;
       left: -13px;
@@ -183,6 +189,7 @@
   }
 
   &__description {
+    position: relative;
     color: var(--colors-neutral-700);
   }
 
@@ -192,6 +199,17 @@
       img {
         width: 100%;
         border-radius: var(--radius-20);
+      }
+      &::after {
+        content: "";
+        background: no-repeat;
+        background-image: url("/assets/images/logos-tech.svg");
+        pointer-events: none; // éviter les interactions avec le pseudo-element
+        position: absolute;
+        display: inline-block;
+        width: 120px;
+        height: 100%;
+        transform: translate(-69%, -34%);
       }
     }
 
