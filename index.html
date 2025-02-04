@@ -331,13 +331,19 @@
 
       <section class="journey__section container">
         <div class="journey">
-          <h2 class="journey__title text-preset-2">Your tech reading journey</h2>
+          <h2 class="journey__title text-preset-2">
+            Your tech reading journey
+          </h2>
           <div class="journey__steps">
             <div class="journey__step">
               <!-- @todo: check bem -->
               <div class="journey__step-number text-preset-6">
                 <div>1</div>
-                <img class="journey__step-number-arrow" src="/assets/images/pattern-arrow.svg" alt="">
+                <img
+                  class="journey__step-number-arrow"
+                  src="/assets/images/pattern-arrow.svg"
+                  alt=""
+                />
               </div>
               <p class="journey__step-description text-preset-6">
                 Choose your membership tier
@@ -347,7 +353,11 @@
             <div class="journey__step">
               <div class="journey__step-number text-preset-6">
                 <div>2</div>
-                <img class="journey__step-number-arrow" src="/assets/images/pattern-arrow.svg" alt="">
+                <img
+                  class="journey__step-number-arrow"
+                  src="/assets/images/pattern-arrow.svg"
+                  alt=""
+                />
               </div>
               <p class="journey__step-description text-preset-6">
                 Get your monthly book selection
@@ -357,7 +367,11 @@
             <div class="journey__step">
               <div class="journey__step-number text-preset-6">
                 <div>3</div>
-                <img class="journey__step-number-arrow" src="/assets/images/pattern-arrow.svg" alt="">
+                <img
+                  class="journey__step-number-arrow"
+                  src="/assets/images/pattern-arrow.svg"
+                  alt=""
+                />
               </div>
               <p class="journey__step-description text-preset-6">
                 Join our discussion forums
@@ -368,7 +382,9 @@
               <div class="journey__step-number text-preset-6">
                 <div>4</div>
               </div>
-              <p class="journey__step-description text-preset-6">Attend exclusive meetups</p>
+              <p class="journey__step-description text-preset-6">
+                Attend exclusive meetups
+              </p>
             </div>
           </div>
         </div>
@@ -392,6 +408,7 @@
       <button class="primary-button text-preset-6">
         Primary button
         <svg
+          class="button-icon"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="25"
@@ -450,5 +467,61 @@
     into an enriching community experience. The discussions are gold!" Sarah
     Chen, Software Architect Ready to debug your reading list? Review membership
     options 200+ developers joined already © 2024 - Tech Book Club
+    <script type="module">
+      import {
+        animate,
+        scroll,
+        stagger,
+      } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
+      // Elements
+      const buttonIcon = document.querySelector(".primary-button");
+      const heroTitle = document.querySelector(".hero__text-title");
+      const heroImage = document.querySelector(".hero__image");
+      const heroDesc = document.querySelector(".hero__text-description");
+      const heroCta = document.querySelector(".hero__cta-button");
+      const heroCtaTestimonial = document.querySelector(".hero__cta-testimonial");
+
+      // Hero Title - Animation rapide -> plus lente
+      animate(
+        heroTitle,
+        { y: [50, 0], opacity: [0, 1] },
+        { duration: 1.1, easing: "easeOutExpo" } // Commence vite, finit lentement
+      );
+
+      // Hero Image
+      animate(
+        heroImage,
+        { y: [30, 0], opacity: [0, 1] },
+        { duration: 1, easing: "easeOutExpo", delay: 1 }
+      );
+
+      // Hero Description
+      animate(
+        heroDesc,
+        { y: [50, 0], opacity: [0, 1] },
+        { duration: 1.2, easing: "easeOutExpo", delay: 0.3 }
+      );
+
+      animate(
+        heroCta,
+        { y: [50, 0], opacity: [0, 1] },
+        { duration: 1.2, easing: "easeOutExpo", delay: 0.5 }
+      );
+
+      animate(
+        heroCtaTestimonial,
+        { y: [50, 0], opacity: [0, 1] },
+        { duration: 1.2, easing: "easeOutExpo", delay: 0.7 }
+      );
+
+      // Scroll to hero title
+      // animate(
+      //   heroTitle,
+      //   { x: [-50, 0], opacity: [0, 1] },
+      //   { ease: "easeIn" },
+      //   { duration: 0.5 }
+      // );
+      // animate(heroImage, { y: [20, 0], opacity: [0, 1] }, { duration: 0.5 });
+    </script>
   </body>
 </html>
