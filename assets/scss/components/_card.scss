@@ -37,6 +37,10 @@
     border-top: none;
   }
 
+  &__cta {
+    z-index: 2;
+  }
+
   &--s {
     --card-width: 340px;
     --card-height: 356px;
@@ -46,11 +50,23 @@
   }
 
   &--m {
+    position: relative;
+    overflow: hidden;
     --card-width: 340px;
     --card-height: 356px;
     --card-padding: var(--spacing-300);
     --card-bg-color: var(--colors-neutral-50);
     --card-gap: var(--spacing-400);
+
+    &::after {
+      content: "";
+      background-image: url("/assets/images/pattern-glow.svg");
+      pointer-events: none; // éviter les interactions avec le pseudo-element
+      position: absolute;
+      transform: translate(-30%, -9%);
+      width: 684px;
+      height: 684px;
+    }
   }
 
   @include m.breakpoint("medium") {
