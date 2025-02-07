@@ -176,7 +176,7 @@
               Read together, grow together
             </h2>
             <ul class="feature__list text-preset-5">
-              <li class="feature__item">
+              <li class="item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -198,12 +198,12 @@
                     d="m19.06 6.8 1.3 2.2c-2.26 1.06-3.92 2.54-4.96 4.46-1.02 1.9-1.56 4.42-1.6 7.54h-2.6c-.3-2.62-1.7-4.56-4.4-5.28l.92-2.44c1.04.32 1.96.88 2.76 1.7.82.82 1.36 1.74 1.64 2.78.46-4.86 2.8-8.64 6.94-10.96Z"
                   />
                 </svg>
-                <p class="feature__item-text text-preset-5">
+                <p class="item-text text-preset-5">
                   Monthly curated tech reads selected by industry experts
                 </p>
               </li>
 
-              <li class="feature__item">
+              <li class="item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -225,12 +225,12 @@
                     d="m19.06 6.8 1.3 2.2c-2.26 1.06-3.92 2.54-4.96 4.46-1.02 1.9-1.56 4.42-1.6 7.54h-2.6c-.3-2.62-1.7-4.56-4.4-5.28l.92-2.44c1.04.32 1.96.88 2.76 1.7.82.82 1.36 1.74 1.64 2.78.46-4.86 2.8-8.64 6.94-10.96Z"
                   />
                 </svg>
-                <p class="feature__item-text text-preset-5">
+                <p class="item-text text-preset-5">
                   Virtual and in-person meetups for deep-dive discussions
                 </p>
               </li>
 
-              <li class="feature__item">
+              <li class="item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -252,12 +252,12 @@
                     d="m19.06 6.8 1.3 2.2c-2.26 1.06-3.92 2.54-4.96 4.46-1.02 1.9-1.56 4.42-1.6 7.54h-2.6c-.3-2.62-1.7-4.56-4.4-5.28l.92-2.44c1.04.32 1.96.88 2.76 1.7.82.82 1.36 1.74 1.64 2.78.46-4.86 2.8-8.64 6.94-10.96Z"
                   />
                 </svg>
-                <p class="feature__item-text text-preset-5">
+                <p class="item-text text-preset-5">
                   Early access to new tech book releases
                 </p>
               </li>
 
-              <li class="feature__item">
+              <li class="item">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -279,7 +279,7 @@
                     d="m19.06 6.8 1.3 2.2c-2.26 1.06-3.92 2.54-4.96 4.46-1.02 1.9-1.56 4.42-1.6 7.54h-2.6c-.3-2.62-1.7-4.56-4.4-5.28l.92-2.44c1.04.32 1.96.88 2.76 1.7.82.82 1.36 1.74 1.64 2.78.46-4.86 2.8-8.64 6.94-10.96Z"
                   />
                 </svg>
-                <p class="feature__item-text text-preset-5">
+                <p class="item-text text-preset-5">
                   Author Q&A sessions with tech thought leaders
                 </p>
               </li>
@@ -389,6 +389,21 @@
           </div>
         </div>
       </section>
+
+      <section class="membership__section container">
+        <div class="membership">
+          <h2 class="membership__title text-preset-2">Membership options</h2>
+        </div>
+        <div class="memberships__cards">
+          <div class="card card--s">
+            <h3 class="card__title">Starter</h3>
+            <div class="card__price">
+              <span class="card__price-amount">$19</span>
+              <span class="card__price-period">/month</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <span class="text-preset-4" style="margin-bottom: 12px">Design system</span>
@@ -473,22 +488,28 @@
       );
       const featureImage = document.querySelector(".feature__image");
       const featureTitle = document.querySelector(".feature__title");
+      const featureItems = document.querySelectorAll(".item");
+      const communityImage = document.querySelector(".community__image");
+      const communityTitle = document.querySelector(".community__title");
+      const communityDescription = document.querySelector(
+        ".community__description"
+      );
+      const journeyTitle = document.querySelector(".journey__title");
+      const journeySteps = document.querySelectorAll(".journey__step");
 
-      // Hero Title - Animation rapide -> plus lente
+      // Animations
       animate(
         heroTitle,
         { y: [50, 0], opacity: [0, 1] },
-        { duration: 1.1, easing: "easeOutExpo" } // Commence vite, finit lentement
+        { duration: 1.1, easing: "easeOutExpo" }
       );
 
-      // Hero Image
       animate(
         heroImage,
         { y: [30, 0], opacity: [0, 1] },
         { duration: 1, easing: "easeOutExpo", delay: 1 }
       );
 
-      // Hero Description
       animate(
         heroDesc,
         { y: [50, 0], opacity: [0, 1] },
@@ -507,18 +528,6 @@
         { duration: 1.2, easing: "easeOutExpo", delay: 0.7 }
       );
 
-      // inView(
-      //   ".container",
-      //   ({ target }) => {
-      //     animate(
-      //       target,
-      //       { opacity: [0, 1], y: [50, 0] },
-      //       { duration: 3, easing: "easeOutExpo" }
-      //     );
-      //   },
-      //   { once: true }
-      // );
-
       inView(featureTitle, ({ target }) => {
         animate(
           target,
@@ -535,52 +544,70 @@
         );
       });
 
-      // inView(
-      //   ".feature__list",
-      //   ({ target }) => {
-      //     // Animation du UL (apparition globale)
-      //     animate(target, { opacity: [0, 1] }, { duration: 0.5 });
-
-      //     // Récupérer tous les <li> de la liste
-      //     const items = target.querySelectorAll(".feature__item");
-
-      //     // Animer chaque <li> un par un avec un délai progressif
-      //     animate(
-      //       items,
-      //       { x: [-20, 0], opacity: [0, 1] }, // Déplacement de gauche à droite + apparition
-      //       { duration: 0.6, delay: stagger(0.2), easing: "easeOutExpo" } // Délai progressif
-      //     );
-      //   },
-      //   { once: true }
-      // );
-
-      const items = document.querySelectorAll(".feature__item");
-
-      items.forEach((item, index) => {
+      featureItems.forEach((item, index) => {
         inView(
           item,
           () => {
             animate(
               item,
-              { x: [-20, 0], opacity: [0, 1] }, // Animation d'apparition
-              { duration: 0.6, delay: index * 0.2, easing: "easeOutExpo" } // Décalage progressif
+              { x: [-20, 0], opacity: [0, 1] },
+              { duration: 0.6, delay: index * 0.2, easing: "easeOutExpo" }
             );
           },
           { once: true }
-        ); // L'animation se joue une seule fois par élément
-      });
-      inView(featureImage, (element, info) => {
-        console.log("The link ", element, " has entered the viewport");
+        );
       });
 
-      // Scroll to hero title
-      // animate(
-      //   heroTitle,
-      //   { x: [-50, 0], opacity: [0, 1] },
-      //   { ease: "easeIn" },
-      //   { duration: 0.5 }
-      // );
-      // animate(heroImage, { y: [20, 0], opacity: [0, 1] }, { duration: 0.5 });
+      journeySteps.forEach((step, index) => {
+        inView(
+          step,
+          () => {
+            animate(
+              step,
+              { x: [-20, 0], opacity: [0, 1] },
+              { duration: 1, delay: index * 0.2, easing: "easeOutExpo" }
+            );
+          },
+          { once: true }
+        );
+      });
+
+      inView(journeyTitle, ({ target }) => {
+        animate(
+          target,
+          { y: [-30, 0], opacity: [0, 1] },
+          { duration: 1.2, easing: "easeOutExpo" }
+        );
+      });
+
+      inView(communityImage, ({ target }) => {
+        animate(
+          target,
+          { scale: [0.4, 1], opacity: [0, 1] },
+          { ease: "circInOut", duration: 1.2, delay: 0.1 }
+        );
+      });
+
+      inView(communityTitle, ({ target }) => {
+        animate(
+          target,
+          { x: [-50, 0], opacity: [0, 1] },
+          { duration: 1.2, easing: "easeOutExpo", delay: 0.3 }
+        );
+      });
+
+      inView(communityDescription, ({ target }) => {
+        animate(
+          target,
+          { x: [-50, 0], opacity: [0, 1] },
+          { duration: 1.2, easing: "easeOutExpo", delay: 0.5 }
+        );
+      });
+
+      // debug
+      // inView(myElement, (element, info) => {
+      //   console.log("Element", element, " has entered the viewport");
+      // });
     </script>
   </body>
 </html>

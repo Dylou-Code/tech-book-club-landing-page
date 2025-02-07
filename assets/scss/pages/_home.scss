@@ -142,6 +142,16 @@
     gap: 34px;
   }
 
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+    max-width: 431px;
+  }
+
   @include m.breakpoint("large") {
     &__image {
       order: 1;
@@ -304,6 +314,10 @@
   @include m.breakpoint("large") {
     align-items: center;
 
+    &::after {
+      transform: translate(55%, -15%);
+    }
+
     &__title {
       text-align: center;
     }
@@ -321,6 +335,25 @@
           display: flex;
         }
       }
+
+      &-description {
+        text-wrap-style: balance;
+      }
+    }
+  }
+}
+
+.membership {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-600);
+  padding: var(--spacing-1000);
+
+  @include m.breakpoint("medium") {
+    &__plans {
+      display: flex;
+      flex-direction: row;
+      gap: var(--spacing-600);
     }
   }
 }
