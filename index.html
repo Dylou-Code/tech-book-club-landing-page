@@ -448,18 +448,6 @@
       </main>
       <footer class="layout__footer">Footer</footer>
     </div>
-
-    Join the ultimate tech book club Turn your reading time into learning time
-    with fellow tech enthusiasts. Get curated recommendations, join vibrant
-    discussions, and level up your skills one chapter at a time. Review
-    membership options 200+ developers joined already Read together, grow
-    together Monthly curated tech reads selected by industry experts Virtual and
-    in-person meetups for deep-dive discussions Early access to new tech book
-    releases Author Q&A sessions with tech thought leaders Not your average book
-    club Connect with a community that speaks your language - from Python to
-    TypeScript and everything in between. Our discussions blend technical depth
-    with practical applications. Your tech reading journey 1 Choose your
-    membership tier 2 Get your monthly book selection 3 Join our discussion
     forums 4 Attend exclusive meetups Membership options Starter $19/month 1
     book/month Online forums Subscribe now Pro $29/month 2 books/month Virtual
     meetups Subscribe now Enterprise Custom Team access Private sessions Talk to
@@ -472,6 +460,7 @@
         animate,
         scroll,
         stagger,
+        inView,
       } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
       // Elements
       const buttonIcon = document.querySelector(".primary-button");
@@ -479,7 +468,11 @@
       const heroImage = document.querySelector(".hero__image");
       const heroDesc = document.querySelector(".hero__text-description");
       const heroCta = document.querySelector(".hero__cta-button");
-      const heroCtaTestimonial = document.querySelector(".hero__cta-testimonial");
+      const heroCtaTestimonial = document.querySelector(
+        ".hero__cta-testimonial"
+      );
+      const featureImage = document.querySelector(".feature__image");
+      const featureTitle = document.querySelector(".feature__title");
 
       // Hero Title - Animation rapide -> plus lente
       animate(
@@ -513,6 +506,72 @@
         { y: [50, 0], opacity: [0, 1] },
         { duration: 1.2, easing: "easeOutExpo", delay: 0.7 }
       );
+
+      // inView(
+      //   ".container",
+      //   ({ target }) => {
+      //     animate(
+      //       target,
+      //       { opacity: [0, 1], y: [50, 0] },
+      //       { duration: 3, easing: "easeOutExpo" }
+      //     );
+      //   },
+      //   { once: true }
+      // );
+
+      inView(featureTitle, ({ target }) => {
+        animate(
+          target,
+          { x: [-20, 0], opacity: [0, 1] },
+          { duration: 0.6, easing: "easeOutExpo" }
+        );
+      });
+
+      inView(featureImage, ({ target }) => {
+        animate(
+          target,
+          { scale: [0.4, 1] },
+          { ease: "circInOut", duration: 1.2 }
+        );
+      });
+
+      // inView(
+      //   ".feature__list",
+      //   ({ target }) => {
+      //     // Animation du UL (apparition globale)
+      //     animate(target, { opacity: [0, 1] }, { duration: 0.5 });
+
+      //     // Récupérer tous les <li> de la liste
+      //     const items = target.querySelectorAll(".feature__item");
+
+      //     // Animer chaque <li> un par un avec un délai progressif
+      //     animate(
+      //       items,
+      //       { x: [-20, 0], opacity: [0, 1] }, // Déplacement de gauche à droite + apparition
+      //       { duration: 0.6, delay: stagger(0.2), easing: "easeOutExpo" } // Délai progressif
+      //     );
+      //   },
+      //   { once: true }
+      // );
+
+      const items = document.querySelectorAll(".feature__item");
+
+      items.forEach((item, index) => {
+        inView(
+          item,
+          () => {
+            animate(
+              item,
+              { x: [-20, 0], opacity: [0, 1] }, // Animation d'apparition
+              { duration: 0.6, delay: index * 0.2, easing: "easeOutExpo" } // Décalage progressif
+            );
+          },
+          { once: true }
+        ); // L'animation se joue une seule fois par élément
+      });
+      inView(featureImage, (element, info) => {
+        console.log("The link ", element, " has entered the viewport");
+      });
 
       // Scroll to hero title
       // animate(
