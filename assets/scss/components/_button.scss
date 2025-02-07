@@ -4,30 +4,21 @@
 .primary-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-200);
   padding: var(--spacing-250) var(--spacing-300);
   background-color: var(--colors-light-salmon-50);
   border: 2px solid var(--colors-neutral-900);
   border-radius: var(--radius-8);
   cursor: pointer;
-
-  font-family: "Inter", sans-serif;
-  font-size: f.rem(16);
-  line-height: 130%;
-  font-weight: 600;
-  letter-spacing: -1px;
-
-  @include m.breakpoint("medium") {
-    font-size: f.rem(18);
-  }
+  text-transform: uppercase;
 
   &:hover {
     background: linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%);
   }
 
   &:focus-visible {
-    outline: none; /* Supprimer les bordures par défaut */
-    /* Première ombre blanche */
+    outline: none;
     box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px var(--colors-neutral-700); /* Deuxième ombre sombre */
   }
 }

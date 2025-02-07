@@ -346,14 +346,32 @@
 .membership {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-600);
-  padding: var(--spacing-1000);
+  gap: var(--spacing-300);
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-300);
+  }
 
   @include m.breakpoint("medium") {
-    &__plans {
+    gap: var(--spacing-500);
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-200);
+    }
+  }
+
+  @include m.breakpoint("large") {
+    align-items: center;
+    gap: var(--spacing-600);
+    &__cards {
       display: flex;
       flex-direction: row;
-      gap: var(--spacing-600);
+      align-items: center;
+      justify-content: center;
     }
   }
 }

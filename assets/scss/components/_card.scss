@@ -1,0 +1,85 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: var(--card-padding);
+  border-radius: var(--radius-8);
+  background: var(--card-bg-color);
+  border: 1px solid var(--colors-neutral-200);
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    padding-left: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+  }
+
+  &__price {
+    display: flex;
+    gap: var(--spacing-100);
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__separator {
+    border: 1px solid var(--colors-neutral-200);
+    border-top: none;
+  }
+
+  &--s {
+    --card-width: 340px;
+    --card-height: 356px;
+    --card-padding: var(--spacing-300);
+    --card-bg-color: var(--colors-neutral-0);
+    --card-gap: var(--spacing-400);
+  }
+
+  &--m {
+    --card-width: 340px;
+    --card-height: 356px;
+    --card-padding: var(--spacing-300);
+    --card-bg-color: var(--colors-neutral-50);
+    --card-gap: var(--spacing-400);
+  }
+
+  @include m.breakpoint("medium") {
+    &--s {
+      --card-width: 340px;
+      --card-height: 358px;
+    }
+
+    &--m {
+      --card-width: 340px;
+      --card-height: 358px;
+    }
+  }
+
+  @include m.breakpoint("large") {
+    &--s {
+      --card-width: 286px;
+      --card-height: 358px;
+      --card-padding: var(--spacing-300);
+      --card-bg-color: var(--colors-neutral-0);
+      --card-gap: var(--spacing-300);
+    }
+
+    &--m {
+      --card-width: 350px;
+      --card-height: 390px;
+      --card-padding: var(--spacing-400);
+      --card-bg-color: var(--colors-neutral-50);
+      --card-gap: var(--spacing-400);
+    }
+  }
+}

@@ -19,8 +19,17 @@ html {
   }
 
   .text-preset-3 {
-    font-size: f.rem(24);
+    font-family: "Martian mono", sans-serif;
+    font-size: f.rem(34);
     line-height: 120%;
+    font-weight: 600;
+    letter-spacing: -2px;
+  }
+
+  .text-preset-3-mobile {
+    font-family: "Martian mono", sans-serif;
+    font-size: f.rem(24);
+    line-height: 110%;
     font-weight: 600;
     letter-spacing: -1px;
   }
@@ -86,6 +95,7 @@ html {
     }
 
     .text-preset-3 {
+      font-family: "Martian mono", sans-serif;
       font-size: f.rem(34);
       line-height: 120%;
       font-weight: 600;
