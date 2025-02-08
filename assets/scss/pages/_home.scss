@@ -1,4 +1,6 @@
 @use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -372,6 +374,52 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
+    }
+  }
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+
+  &__stars {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  &__text {
+    color: var(--colors-neutral-900);
+    font-family: "Martian mono", sans-serif;
+    font-size: f.rem(24);
+    line-height: 110%;
+    font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+  }
+
+  @include m.breakpoint("medium") {
+    &__text {
+      font-size: f.rem(34);
+      line-height: 130%;
+      font-weight: 600;
+    }
+  }
+
+  @include m.breakpoint("large") {
+    align-items: center;
+    &__content {
+      align-items: center;
+      max-width: 970px;
+    }
+
+    &__text {
+      text-align: center;
     }
   }
 }
