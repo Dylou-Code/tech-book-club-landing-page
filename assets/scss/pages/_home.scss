@@ -423,3 +423,18 @@
     }
   }
 }
+
+.footer {
+  padding: var(--spacing-1000) ;
+  &__section {
+    position: relative;
+    background-image: url("/assets/images/pattern-dark-bg.svg");
+    background-color: var(--colors-neutral-900);
+    overflow: hidden; /* Cache le contenu qui dépasse */
+  }
+
+  &__title {
+    color: var(--colors-neutral-0);
+    text-align: center;
+  }
+}
