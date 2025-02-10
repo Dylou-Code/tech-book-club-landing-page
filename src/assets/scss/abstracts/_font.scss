@@ -44,5 +44,13 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('./src/assets/fonts/martian-mono/static/MartianMono-SemiBold.ttf') format('truetype');
+    src: url('./src/assets/fonts/martian-mono/static/MartianMono-SemiBold.ttf') format('truetype');  
+}
+
+@font-face {
+    font-family: 'Martian mono';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('./src/assets/fonts/martian-mono/static/MartianMono-Bold.ttf') format('truetype');
 }

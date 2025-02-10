@@ -5,5 +5,6 @@
 @use 'base/typography';
 @use 'tokens/index';
 @use 'layout/layout';
+@use 'layout/footer';
 @use 'components/index' as *;
 @use 'pages/home';

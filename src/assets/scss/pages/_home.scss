@@ -99,7 +99,7 @@
 
     &::after {
       content: "";
-      background-image: url("/assets/images/pattern-glow.svg");
+      background-image: url("./src/assets/images/pattern-glow.svg");
       pointer-events: none; // éviter les interactions avec le pseudo-element
       position: absolute;
       bottom: -300px;
@@ -215,7 +215,7 @@
       &::after {
         content: "";
         background: no-repeat;
-        background-image: url("/assets/images/logos-tech.svg");
+        background-image: url("./src/assets/images/logos-tech.svg");
         pointer-events: none; // éviter les interactions avec le pseudo-element
         position: absolute;
         display: inline-block;
@@ -248,7 +248,7 @@
 
   &::after {
     content: "";
-    background-image: url("/assets/images/pattern-glow.svg");
+    background-image: url("./src/assets/images/pattern-glow.svg");
     pointer-events: none; // éviter les interactions avec le pseudo-element
     position: absolute;
     // top: -40px;
@@ -426,22 +426,3 @@
   }
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-400);
-  padding: var(--spacing-1000);
-  
-  &__section {
-    position: relative;
-    background-image: url("/assets/images/pattern-dark-bg.svg");
-    background-color: var(--colors-neutral-900);
-    overflow: hidden;
-  }
-
-  &__title {
-    color: var(--colors-neutral-0);
-    text-align: center;
-  }
-}

@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-400);
+    padding: var(--spacing-1000);
+    
+    &__section {
+      position: relative;
+      background-image: url("/assets/images/pattern-dark-bg.svg");
+      background-color: var(--colors-neutral-900);
+      overflow: hidden;
+     border-radius: 16px 16px 0 0;
+    }
+  
+    &__title {
+      text-wrap-style: auto;
+      color: var(--colors-neutral-0);
+      text-align: center;
+    }
+  }
+  
