@@ -1,17 +1,21 @@
 @use "../abstracts/functions" as f;
 @use "../abstracts/mixins" as m;
 
-.primary-button {
+.primary-button,
+.alternate-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-200);
-  padding: var(--spacing-250) var(--spacing-300);
-  background-color: var(--colors-light-salmon-50);
-  border: 2px solid var(--colors-neutral-900);
   border-radius: var(--radius-8);
   cursor: pointer;
   text-transform: uppercase;
+}
+
+.primary-button {
+  padding: var(--spacing-250) var(--spacing-300);
+  background-color: var(--colors-light-salmon-50);
+  border: 2px solid var(--colors-neutral-900);
 
   &:hover {
     background: linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%);
@@ -24,15 +28,10 @@
 }
 
 .alternate-button {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-200);
   padding: var(--spacing-250) var(--spacing-300);
   background: none;
   color: var(--colors-neutral-0);
   border: 2px solid var(--colors-neutral-0);
-  border-radius: var(--radius-8);
-  cursor: pointer;
 
   &:hover {
     background: linear-gradient(
@@ -47,11 +46,4 @@
     box-shadow: 0 0 0 3px var(--colors-neutral-900),
       0 0 0 5px var(--colors-neutral-200);
   }
-}
-
-.buttons {
-  display: flex;
-  gap: var(--spacing-200);
-  background-color: var(--colors-neutral-900);
-  padding: var(--spacing-300);
 }
