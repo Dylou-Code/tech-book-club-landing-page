@@ -222,7 +222,7 @@
 
   &::after {
     content: "";
-    background-image: url("./src/assets/images/pattern-glow.svg");
+    background-image: url("/src/assets/images/pattern-glow.svg");
     pointer-events: none; // éviter les interactions avec le pseudo-element
     position: absolute;
     // top: -40px;
