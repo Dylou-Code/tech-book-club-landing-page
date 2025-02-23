@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/assets/fonts/inter/static/Inter_18pt-Regular.ttf') format('truetype');
+    src: url('@/assets/fonts/inter/static/Inter_18pt-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('./src/assets/fonts/inter/static/Inter_18pt-Medium.ttf') format('truetype');
+    src: url('@/assets/fonts/inter/static/Inter_18pt-Medium.ttf') format('truetype');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('./src/assets/fonts/martian-mono/static/MartianMono-Regular.ttf') format('truetype');
+    src: url('@/assets/fonts/martian-mono/static/MartianMono-Regular.ttf') format('truetype');
 
 }
 
@@ -28,7 +28,7 @@
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('./src/assets/fonts/martian-mono/static/MartianMono-Regular.ttf') format('truetype');
+    src: url('/src/assets/fonts/martian-mono/static/MartianMono-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -36,7 +36,7 @@
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('./src/assets/fonts/martian-mono/static/MartianMono-Medium.ttf') format('truetype');
+    src: url('/src/assets/fonts/martian-mono/static/MartianMono-Medium.ttf') format('truetype');
 }
 
 @font-face {
@@ -44,7 +44,7 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('./src/assets/fonts/martian-mono/static/MartianMono-SemiBold.ttf') format('truetype');  
+    src: url('/src/assets/martian-mono/static/MartianMono-SemiBold.ttf') format('truetype');  
 }
 
 @font-face {
@@ -52,5 +52,5 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('./src/assets/fonts/martian-mono/static/MartianMono-Bold.ttf') format('truetype');
+    src: url('@/assets/fonts/martian-mono/static/MartianMono-Bold.ttf') format('truetype');
 }

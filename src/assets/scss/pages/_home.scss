@@ -10,7 +10,7 @@
 
   &__section {
     position: relative;
-    background-image: url("src/assets/images/pattern-light-bg.svg");
+    background-image: url("@/assets/images/pattern-light-bg.svg");
     background-color: #faf5f3;
     overflow: hidden; /* Cache le contenu qui dépasse */
   }
@@ -73,7 +73,7 @@
 
     &::after {
       content: "";
-      background-image: url("./src/assets/images/pattern-glow.svg");
+      background-image: url("@/assets/images/pattern-glow.svg");
       pointer-events: none; // éviter les interactions avec le pseudo-element
       position: absolute;
       bottom: -300px;
@@ -189,7 +189,7 @@
       &::after {
         content: "";
         background: no-repeat;
-        background-image: url("./src/assets/images/logos-tech.svg");
+        background-image: url("@/assets/images/logos-tech.svg");
         pointer-events: none; // éviter les interactions avec le pseudo-element
         position: absolute;
         display: inline-block;
@@ -215,14 +215,14 @@
   align-items: flex-start;
   gap: var(--spacing-600);
   padding: var(--spacing-1000);
-  background-image: url("/assets/images/pattern-light-bg.svg");
+  background-image: url("@/assets/images/pattern-light-bg.svg");
   border-radius: var(--radius-12);
   background-color: var(--colors-neutral-50);
   overflow: hidden;
 
   &::after {
     content: "";
-    background-image: url("/src/assets/images/pattern-glow.svg");
+    background-image: url("@/assets/images/pattern-glow.svg");
     pointer-events: none; // éviter les interactions avec le pseudo-element
     position: absolute;
     // top: -40px;

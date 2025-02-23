@@ -60,8 +60,8 @@
 
     &::after {
       content: "";
-      background-image: url("./src/assets/images/pattern-glow.svg");
-      pointer-events: none; // éviter les interactions avec le pseudo-element
+      background-image: url("@/assets/images/pattern-glow.svg");
+      pointer-events: none; 
       position: absolute;
       transform: translate(-30%, -9%);
       width: 684px;
