@@ -1,5 +1,6 @@
 {
   "name": "tech-book-club-landing-page",
+  "homepage": "https://Dylou-Code.github.io/tech-book-club-landing-page/",
   "private": true,
   "type": "module",
   "version": "1.0.0",
@@ -10,16 +11,19 @@
     "build:sass": "sass assets/scss/main.scss dist/css/main.css --watch",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^6.1.0",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "vite": "^6.1.0"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "motion": "^12.1.0"
   }
 }
